@@ -1,0 +1,68 @@
+ DB design :
+ 
+ 1) Database to be used : mongoDb (mongoLabs-online hosting)/mongoose node module for schema 
+
+GitRepo : https://github.com/sunny1512/news-bulletin/tree/master
+
+ 
+Data Feilds Identified: 
+=========================
+Field                        Description 
+=====                       =============  
+Id                           Unique Id of each Bulletin point
+Headline                     Headline to be displayed (main UI text)
+url                          source url link
+News-Channel                 channel name
+news-category               b(breaking news)/t(todays news)
+news-channel-web-link        channel url
+        
+        
+mongo ds123822.mlab.com:23822/newstimeline -u prashant -p webapp12
+
+mongo uri or code :: mongodb://prashant:webapp12@ds123822.mlab.com:23822/newstimeline
+
+https://github.com/sunny1512/news-bulletin/invitations
+
+=================================================================
+API (or functionality to exposed)
+
+-> So basically a news bulletin serves the purpose of displaying top news to users.to hum pages pe news dikhayenge user can click to read further
+comments? Yes fine 
+so ek end point to get all news stored in DB
+ek endpoint to add a new news - this i want to question..!!
+ek endpoint jaha pe delete kar sakte hai
+Now the question is ?
+  1)  Should the fiteration criteria be part of back-end or should be managed by front-end ? front end would be fast and better..u fetch all data and render the required data (Cool)
+  2)  I want to question the adding end point ..why would user be allowed to add news? Yes true (IN TERMS OF USER NO USE)
+  3)  Notification pop-up should be designed for newer updates ? iska bata ..ye kise soch rha hi (for this login must be             
+      associated ). The last left time disconnect time must be tracked and newer news added after that must be shown.
+      okay 
+      or another way is after a given interval just broadcast all news 15 minutes later to current time who all are connected.
+      (here no need to maintain login) (just show less than 3-4 news)??(inputs) Complex hai ye mujhe bhi nahi pata how to do?
+      But implementing a notication box is cool ? (Comments: True just the tracking part is difficult to think)
+   4)Sorting functionality(extra feature)
+   5) Fiteration option ( Yes cool )
+       -> Filteration options ?
+       like if the want to see news of specific publisher only or of specific domain..(domain not possible in this case but publiser) Thik hai 
+   6) Should login be maintainedor not ? yes but we will work first on base end points then can add login and expose end points to logged in users only (okay cool)
+   
+   lets try to wrap now.. Okay I am feeling sleepy too 
+   Kal karte hai
+       bc wrap to start coding..soyega kya
+       haa yaar bahut thak gaya hu 
+       
+   okay sun mi ek basic app structure taiyaar rkhunga express app kaa fir hum routers divide kr lenge tu ek route pe kaam krna mi dusre pe?? cool 
+   chal fir goodnight 
+ But filteration is mentioned right ?yes read and filter ((oka)y)
+
+
+mongodb://<dbuser>:<dbpassword>@ds123562.mlab.com:23562/userinfo
+
+
+so uptill now the endpoints that are confirmed are 
+1) get all news - localhost:3000/news
+2) get news according to sorting criteria localhost:3000/news/sort
+3) get filtered news localhost:3000/news/:publishername
+4)
+ 
+

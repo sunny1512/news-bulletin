@@ -1,0 +1,24 @@
+{
+  "name": "news-bulletin",
+  "version": "1.0.0",
+  "description": "News Bulletin Application",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "server" : "npm run start --prefix news-bulletin-server",
+    "client" : "npm run start --prefix news-bulletin-client",
+    "dev" : "concurrently \"npm run server\" \"npm run client\""
+
+
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sunny1512/news-bulletin.git"
+  },
+  "author": "Prashant/Ashwini",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sunny1512/news-bulletin/issues"
+  },
+  "homepage": "https://github.com/sunny1512/news-bulletin#readme"
+}
