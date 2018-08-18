@@ -1,5 +1,6 @@
 import React from 'react';
 import NewsItem from './news_list_item';
+import '../css/styles.css';
 
 const NewsList = (props) =>{
 
@@ -10,7 +11,7 @@ const NewsList = (props) =>{
     });
 
     return (
-        <div>
+        <div className ="news_list">
             {props.children}
             {items}
         </div>

@@ -1,17 +1,20 @@
 body {
     margin:0;
-    font-family:'Roboto'
+    font-family:'Roboto';
 }
 
 header {
     background:#03a9f4;
-    text-align: center
+    position: fixed;
+    text-align: center;
+    width:100%;
+
 }
 
 .logo {
     color:#fff;
     font-size: 40px;
-    font-family: 'Anton'
+    font-family: 'Anton';
 }
 
 header input {
@@ -23,4 +26,19 @@ header input {
     padding:20px;
     box-sizing:border-box;
     border-bottom: 1px solid grey;
+    
+}
+
+
+.news_item:hover {
+
+    background-color: aquamarine;
+}
+
+.news_list {
+background: gray;
+overflow: auto;
+-webkit-overflow-scrolling: touch;
+-ms-overflow-style: none;
+width:100%;
 }

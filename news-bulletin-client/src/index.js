@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
-
+import './css/styles.css';
 // COMPONENTS
 import Header from './components/header';
 import NewsList from  './components/news_list';
@@ -42,11 +42,13 @@ class App extends Component {
         return (
             <div>
                  <Header keywords={this.getKeyword}/>
-                 <NewsList news={newsFiltered.length === 0 ? newsWhole : newsFiltered}>
+                 <div className="Container ">
+                 <NewsList className ="news_list" news={newsFiltered.length === 0 ? newsWhole : newsFiltered}>
                     <h3>
                         The news are:
                     </h3>
                  </NewsList>
+                 </div>
             </div>
         )
     }  
