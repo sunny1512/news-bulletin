@@ -1,0 +1,239 @@
+* {
+    box-sizing: border-box;
+}
+/*This just stops me getting horizontal scrolling if anything overflows the width*/
+body {
+    overflow-x: hidden;
+    
+}
+/*Just removing default browser padding/margin*/
+html,
+body {
+    padding: 0;
+    margin: 0;
+    color: #ebebeb;
+}
+/*Flexbox gives us the flexiness we need. The top just stays put as there is no scrolling on the body due to the page never exceeding viewport height*/
+
+.logo {
+    color:#fff;
+    font-size: 40px;
+    font-family: 'Anton';
+    position: relative;
+    margin-bottom: 50px;
+}
+
+
+header input {
+    font-size: 20px;
+    margin:20px 0;
+    position: absolute;
+}
+.news_item {
+    padding:20px;
+    box-sizing:border-box;
+    border-bottom: 1px solid rgba(128, 128, 128, 0.158);
+    
+}
+
+
+.news_item:hover {
+
+    background-color: rgb(188, 245, 226);
+}
+
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background:#03a9f4;
+    position: relative;
+    z-index: 10;
+    height: 100px;
+}
+/*This is our main wrapping element, it's made 100vh high to ensure it is always the correct size and then moved into place and padded with negative margin and padding*/
+.Container {
+    display: flex;
+    overflow: hidden;
+    height: 100vh;
+    margin-top: -100px;
+    padding-top: 100px;
+    position: relative;
+    width: 100%;
+    backface-visibility: hidden;
+    will-change: overflow;
+}
+/*All the scrollable sections should overflow and be whatever height they need to be. As they are flex-items (due to being inside a flex container) they could be made to stretch full height at all times if needed.
+WebKit inertia scrolling is being added here for any present/future devices that are able to make use of it.
+*/
+.news_list {
+    overflow: auto;
+    height: auto;
+    padding: .5rem;
+    -webkit-overflow-scrolling: touch;
+    -ms-overflow-style: none;
+}
+/*Entirely optional – just wanted to remove the scrollbar on WebKit browsers as I find them ugly*/
+.news_list::-webkit-scrollbar
+ {
+    display: none;
+}
+/*  Left and Right are set sizes while the Middle is set to flex one so it occupies all remaining space. This could be set as a width too if prefereable, perhaps using calc.*/
+
+
+.news_list {
+    background:lightslategrey;
+    width: 100%;
+}
+
+
+
+.newslist {
+    list-style: none;
+    font-family: 'Lato', sans-serif;
+    margin: 0px;
+    padding: 0px;
+}
+.newslist > li {
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0px 0px 5px rgb(51, 51, 51);
+    box-shadow: 0px 0px 5px rgba(51, 51, 51, 0.7);
+    padding: 0px;
+    margin: 0px 0px 20px;
+}
+
+.newslist > li > .info {
+    padding-top: 5px;
+    text-align: center;
+}
+.newslist > li > .info > .title {
+    font-size: 17pt;
+    font-weight: 700;
+    margin: 0px;
+}
+.newslist > li > .info > .desc {
+    font-size: 13pt;
+    font-weight: 300;
+    margin: 0px;
+}
+.newslist > li > .info > ul,
+.newslist > li > .social > ul {
+    display: table;
+    list-style: none;
+    margin: 10px 0px 0px;
+    padding: 0px;
+    width: 100%;
+    text-align: center;
+}
+.newslist > li > .social > ul {
+    margin: 0px;
+}
+.newslist > li > .info > ul > li,
+.newslist > li > .social > ul > li {
+    display: table-cell;
+    cursor: pointer;
+    color: rgb(30, 30, 30);
+    font-size: 11pt;
+    font-weight: 300;
+    padding: 3px 0px;
+}
+.newslist > li > .info > ul > li > a {
+    display: block;
+    width: 100%;
+    color: rgb(30, 30, 30);
+    text-decoration: none;
+} 
+.newslist > li > .social > ul > li {    
+    padding: 0px;
+}
+.newslist > li > .social > ul > li > a {
+    padding: 3px 0px;
+} 
+.newslist > li > .info > ul > li:hover,
+.newslist > li > .social > ul > li:hover {
+    color: rgb(30, 30, 30);
+    background-color: rgb(200, 200, 200);
+}
+.facebook a,
+.twitter a,
+.google-plus a {
+    display: block;
+    width: 100%;
+    color: rgb(75, 110, 168) !important;
+}
+.twitter a {
+    color: rgb(79, 213, 248) !important;
+}
+.google-plus a {
+    color: rgb(221, 75, 57) !important;
+}
+.facebook:hover a {
+    color: rgb(255, 255, 255) !important;
+    background-color: rgb(75, 110, 168) !important;
+}
+.twitter:hover a {
+    color: rgb(255, 255, 255) !important;
+    background-color: rgb(79, 213, 248) !important;
+}
+.google-plus:hover a {
+    color: rgb(255, 255, 255) !important;
+    background-color: rgb(221, 75, 57) !important;
+}
+
+@media (min-width: 768px) {
+    .newslist > li {
+        position: relative;
+        display: block;
+        width: 100%;
+        height: 120px;
+        padding: 0px;
+    }
+
+ 
+    .newslist > li > .info {
+        background-color: rgb(245, 245, 245);
+        overflow: hidden;
+    }
+    .newslist > li > time,
+    .newslist > li > img {
+        width: 120px;
+        height: 120px;
+        padding: 0px;
+        margin: 0px;
+    }
+    .newslist > li > .info {
+        position: relative;
+        height: 120px;
+        text-align: left;
+        padding-right: 40px;
+    }	
+    .newslist > li > .info > .title, 
+    .newslist > li > .info > .desc {
+        padding: 0px 10px;
+    }
+    .newslist > li > .info > ul {
+        position: absolute;
+        left: 0px;
+        bottom: 0px;
+    }
+    .newslist > li > .social {
+        position: absolute;
+        top: 0px;
+        right: 0px;
+        display: block;
+        width: 40px;
+    }
+    .newslist > li > .social > ul {
+        border-left: 1px solid rgb(230, 230, 230);
+    }
+    .newslist > li > .social > ul > li {			
+        display: block;
+        padding: 0px;
+    }
+    .newslist > li > .social > ul > li > a {
+        display: block;
+        width: 40px;
+        padding: 10px 0px 9px;
+    }
+}

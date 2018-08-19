@@ -1,6 +1,6 @@
 import React from 'react';
 import NewsItem from './news_list_item';
-import '../css/styles.css';
+import '../css/test.css';
 
 const NewsList = (props) =>{
 
